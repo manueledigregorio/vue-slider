@@ -15,11 +15,25 @@
         <div class="items-wrapper">
           
           <img :src="images[counter].image" class="img-car " />
+          <div class="text ">
+            <h2>{{images[counter].title}}</h2>
+            <p>{{images[counter].text}}</p>
+          </div>
                             
         </div>
+       
 
+      
+      <div class="slider-mini">
+        <img 
+        v-for="(img, index) in images" 
+        
+        @click="counter = index"
+        :src="img.image" 
+        :class="{'active': index === counter}" />
+          
       </div>
-
+    </div>
     </div>
   </div>
 </div>

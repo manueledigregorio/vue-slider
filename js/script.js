@@ -29,13 +29,16 @@ createApp({
         }
       ],
       counter:0,
-
+      
     }
     
 
 
   },
+  mounted(){
 
+    
+  }
 }).mount('#app')
 
 
