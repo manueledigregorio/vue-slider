@@ -11,8 +11,11 @@
   <div id="app">
     <div class="main-wrapper">
     <div class="container">
-      <div class="slider">
-        <div class="items-wrapper">
+      <div  class="slider">
+        <div 
+        @mouseover="autoplay = false" 
+        @mouseout="autoplay = true"
+        class="items-wrapper">
           
           <img :src="images[counter].image" class="img-car " />
           <div class="text ">
@@ -24,10 +27,13 @@
        
 
       
-      <div class="slider-mini">
+      <div 
+      @mouseover="autoplay = false" 
+      @mouseout="autoplay = true"
+      class="slider-mini">
         <img 
         v-for="(img, index) in images" 
-        
+         
         @click="counter = index"
         :src="img.image" 
         :class="{'active': index === counter}" />

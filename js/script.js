@@ -29,23 +29,28 @@ createApp({
         }
       ],
       counter:0,
-      
+      autoplay: true,
     }
     
 
 
   },
   methods:{
+  nextSlide() {
+    // se con il cursore sono sopra la funzione sarà false non restituisce nulla
+    if(!this.autoplay){
+      return;
+    }
+    // altrimenti si incrementa il contatore
+    this.counter++
+
+    // Quando la lunghezza dell'array arriva a 5 resetta il contatore
+    if(this.images.length === this.counter){
+      this.counter = 0
+    }
+  },
   startTime(){
-    setInterval(() => {
-      this.counter++
-      // Quando la lunghezza dell'array arriva a 5 resetta il contatore
-     if(this.images.length === this.counter){
-       this.counter = 0
-      }
-
-    }, 1000);
-
+    setInterval(this.nextSlide, 2000)
   }
 
   },
