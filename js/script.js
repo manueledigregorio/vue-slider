@@ -35,10 +35,25 @@ createApp({
 
 
   },
-  mounted(){
+  methods:{
+  startTime(){
+    setInterval(() => {
+      this.counter++
+      // Quando la lunghezza dell'array arriva a 5 resetta il contatore
+     if(this.images.length === this.counter){
+       this.counter = 0
+      }
 
+    }, 1000);
+
+  }
+
+  },
+  mounted(){
+   this.startTime()
     
   }
+
 }).mount('#app')
 
 
