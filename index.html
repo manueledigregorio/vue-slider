@@ -3,28 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <link rel="stylesheet" href="css/style.css">
   <title>Document</title>
 </head>
 <body>
-  
-  <div class="main-wrapper">
+  <div id="app">
+    <div class="main-wrapper">
     <div class="container">
       <div class="slider">
         <div class="items-wrapper">
           
-
+          <img :src="images[counter].image" class="img-car " />
+                            
         </div>
-
-        <div class="bottone bt-top" > &#8593;</div>
-        <div class="bottone bt-bottom" >&#8595;</div>
-
 
       </div>
 
     </div>
   </div>
-
+</div>
+  
 
   <script src="js/script.js"></script>
 </body>
